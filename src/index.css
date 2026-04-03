@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #163556;
+  --color-brand-gold: #9e7b2e;
+  --color-brand-gold-light: #e8e2d6;
+  --color-brand-gold-dark: #5c4820;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --brand-navy: #163556;
+  --brand-gold: #9e7b2e;
+  --brand-gold-light: #e8e2d6;
+  --brand-gold-dark: #5c4820;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f9;
+}
