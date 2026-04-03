@@ -13,9 +13,10 @@ createRoot(document.getElementById('root')!).render(
       theme={{
         token: {
           colorPrimary: BRAND.navy,
-          colorLink: BRAND.navy,
-          colorLinkHover: BRAND.goldDark,
-          colorSuccess: '#2d6a4f',
+          colorLink: BRAND.goldDark,
+          colorLinkHover: BRAND.gold,
+          colorInfo: BRAND.gold,
+          colorSuccess: '#0d9488',
           borderRadius: 14,
           fontFamily: 'Inter, system-ui, sans-serif',
         },

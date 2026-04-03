@@ -3,10 +3,11 @@ import {Button, message} from 'antd';
 import {Link} from 'react-router-dom';
 import {useCart} from '../../../context/CartContext';
 import type {HoverDetail} from '../../../types/types';
+import { BRAND } from '../../../const/branding';
 import {courseCardBtnSecondary, courseCardCartIconBtn} from './courseFlipCardLayout';
 
 const panelClass =
-  'relative flex h-full min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200/55 bg-linear-to-br from-[#e8edf6] via-white via-40% to-brand-gold-light/20 px-2 pb-2 pt-2 text-left shadow-[inset_0_1px_0_0_rgba(255,255,255,0.92),inset_0_2px_0_0_rgba(198,156,53,0.2)] ring-1 ring-brand-gold/10';
+  'relative flex h-full min-h-0 flex-col overflow-hidden rounded-xl border border-slate-200/55 bg-linear-to-br from-slate-100 via-white via-40% to-brand-gold-light/25 px-2 pb-2 pt-2 text-left shadow-[inset_0_1px_0_0_rgba(255,255,255,0.92),inset_0_2px_0_0_rgba(6,182,212,0.12)] ring-1 ring-brand-gold/15';
 
 type Props = {
   title: string;
@@ -53,12 +54,12 @@ export function CourseInfoFlipBack({title, detail, courseId, priceInr, descripti
           className={courseCardCartIconBtn}
           disabled={priceInr == null}
           aria-label='Add to cart'
-          style={{backgroundColor: '#c69c35'}}
+          style={{ backgroundColor: BRAND.gold }}
           onClick={(e) => {
             e.stopPropagation();
             handleAddToCart();
           }}>
-          <ShoppingCartOutlined style={{color: 'while'}} className='text-[20px] ml-1 text-white! transition-colors' aria-hidden />{' '}
+          <ShoppingCartOutlined className='ml-1 text-[20px] text-white! transition-colors' aria-hidden />{' '}
         </Button>
         <Link to={`/courses/${courseId}`} className={courseCardBtnSecondary} onClick={(e) => e.stopPropagation()}>
           View details

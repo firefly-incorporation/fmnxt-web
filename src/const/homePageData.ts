@@ -3,6 +3,7 @@ import type {HoverDetail} from '../types/types';
 
 /** Edit this to change the New Arrivals section headline (Udemy-style block). */
 export const newArrivalsSectionMeta = {
+  kicker: 'Courses & study paths',
   title: 'Skills to strengthen your FM and CRE career',
   subtitle: 'From core FM operations through CRE portfolio strategy—choose a topic and explore our latest video modules.'
 } as const;
@@ -22,6 +23,7 @@ export const newArrivalCategories = [{id: 'all', label: 'All'}, ...newArrivalCat
 
 /** Top / available courses block — title, tabs, and carousel on the home page. */
 export const availableCoursesSectionMeta = {
+  kicker: 'Featured programs',
   title: 'Top courses',
   subtitle: 'Hand-picked FM and CRE programs with practical lessons and member pricing—browse by focus area.'
 } as const;
@@ -34,7 +36,32 @@ export const availableCourseCategoryTabs = [
   {id: 'Operations', label: 'Operations'}
 ] as const;
 
-export const highlights = ['Industry-focused learning', 'Self-paced courses', 'Career-focused outcomes'];
+/** Hero “why FMNXT” tiles — full-width bento band (titles + detail on select / auto-rotate). */
+export const heroValueProps = [
+  {
+    id: 'industry',
+    title: 'Role-aligned depth',
+    subtitle: 'FM & CRE context in every module',
+    detail:
+      'Lessons map to real facilities and corporate real estate work—not generic theory—so you can apply ideas in the next shift, walkthrough, or portfolio review.'
+  },
+  {
+    id: 'pace',
+    title: 'Your calendar, your pace',
+    subtitle: 'Self-paced video you control',
+    detail:
+      'Start, pause, and resume around meetings, site rounds, and deadlines without losing progress. Pick up exactly where you left off on any device.'
+  },
+  {
+    id: 'outcomes',
+    title: 'Outcomes you can cite',
+    subtitle: 'Skills for reviews & stakeholders',
+    detail:
+      'Build practical talking points for budget cycles, SLA reviews, and stakeholder updates—clear outcomes from short, focused video paths.'
+  }
+] as const;
+
+export type HeroValueProp = (typeof heroValueProps)[number];
 
 export const learningTracks = [
   {
@@ -50,6 +77,76 @@ export const learningTracks = [
     copy: 'Technical essentials for systems, maintenance, and lifecycle planning.'
   }
 ];
+
+/** Trust metrics: numeric entries count up on scroll; static entries display as-is. `icon` maps to visuals in `StatsStrip`. */
+export const homeStatsStrip = [
+  {
+    kind: 'count' as const,
+    label: 'Learners',
+    end: 12,
+    suffix: 'K+',
+    ariaLabel: 'Over twelve thousand learners',
+    icon: 'users' as const
+  },
+  {
+    kind: 'count' as const,
+    label: 'Video modules',
+    end: 30,
+    suffix: '+',
+    ariaLabel: 'More than thirty video modules',
+    icon: 'play' as const
+  },
+  {
+    kind: 'count' as const,
+    label: 'Focus areas',
+    end: 8,
+    suffix: '+',
+    ariaLabel: 'More than eight focus areas',
+    icon: 'layers' as const
+  },
+  {
+    kind: 'static' as const,
+    label: 'On-demand access',
+    value: '24/7',
+    ariaLabel: 'Available around the clock',
+    icon: 'clock' as const
+  }
+] as const;
+
+export type HomeStatItem = (typeof homeStatsStrip)[number];
+
+export const homeFaqSectionMeta = {
+  kicker: 'FAQs',
+  title: 'Questions professionals ask before they start',
+  description: 'Straight answers about how FMNXT fits into a busy FM or CRE schedule.'
+} as const;
+
+export const homeFaqItems = [
+  {
+    key: '1',
+    question: 'What topics does FMNXT cover?',
+    answer:
+      'Facilities management operations, corporate real estate, workplace and space strategy, sustainability, vendor performance, safety basics, and related professional skills—delivered as short video modules.'
+  },
+  {
+    key: '2',
+    question: 'Are courses live or recorded?',
+    answer:
+      'All courses are recorded so you can learn on your own schedule. Watch modules in order or jump to the lessons most relevant to your current projects.'
+  },
+  {
+    key: '3',
+    question: 'Who is FMNXT for?',
+    answer:
+      'Working FM and CRE professionals, operations leaders, and anyone who wants practical, applied learning without long classroom commitments.'
+  },
+  {
+    key: '4',
+    question: 'How do I get started?',
+    answer:
+      'Browse the catalog, add courses to your cart, and sign in to complete enrollment. Your dashboard tracks progress across programs.'
+  }
+] as const;
 
 export const newArrivals: Course[] = [
   {

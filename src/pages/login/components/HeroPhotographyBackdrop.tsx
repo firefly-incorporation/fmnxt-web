@@ -8,7 +8,7 @@ type HeroPhotographyBackdropProps = {
 export function HeroPhotographyBackdrop({ isDecorative = false }: HeroPhotographyBackdropProps) {
   return (
     <>
-      <div className="absolute inset-0 bg-[#05080d]" aria-hidden />
+      <div className="absolute inset-0 bg-[#030712]" aria-hidden />
       <div className="absolute inset-0 flex flex-row">
         {LOGIN_HERO_IMAGES.map((imageSource) => (
           <div key={imageSource.src} className="relative min-h-0 flex-1">

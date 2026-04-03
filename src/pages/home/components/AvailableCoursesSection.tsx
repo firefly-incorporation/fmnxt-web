@@ -4,6 +4,7 @@ import {useEffect, useMemo, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {CourseFlipCard, CourseSliderControls, useCourseCarousel} from '../../../components/shared/course';
 import {availableCourseCategoryTabs, availableCoursesSectionMeta} from '../../../const/homePageData';
+import {SectionHeading} from './SectionHeading';
 import type {Course} from '../../../types/course';
 import type {HoverDetail} from '../../../types/types';
 
@@ -29,15 +30,16 @@ export function AvailableCoursesSection({courses, hoverDetails, searchActive = f
   const activeTab = availableCourseCategoryTabs.find((t) => t.id === activeCategoryId);
 
   return (
-    <section className='relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm shadow-slate-900/5 md:p-8 lg:p-10'>
-      <header className='mb-6 md:mb-8'>
-        <Typography.Title level={2} className='!mb-3 !text-[1.35rem] !font-bold !leading-[1.15] !tracking-tight text-brand-navy md:!text-[1.75rem]'>
-          {availableCoursesSectionMeta.title}
-        </Typography.Title>
-        <Typography.Paragraph className='!mb-0 !max-w-3xl !text-[0.95rem] !font-normal !leading-relaxed !text-slate-600 md:!text-base'>
-          {availableCoursesSectionMeta.subtitle}
-        </Typography.Paragraph>
-      </header>
+    <section
+      id='home-featured'
+      className='relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm shadow-slate-900/5 md:p-8 lg:p-10'>
+      <div className='mb-6 md:mb-8'>
+        <SectionHeading
+          kicker={availableCoursesSectionMeta.kicker}
+          title={availableCoursesSectionMeta.title}
+          description={availableCoursesSectionMeta.subtitle}
+        />
+      </div>
 
       <div className='border-b border-slate-200/90'>
         <div className='-mb-px flex gap-4 overflow-x-auto pb-0 md:gap-8 [scrollbar-width:thin]' role='tablist' aria-label='Top course categories'>
@@ -60,7 +62,7 @@ export function AvailableCoursesSection({courses, hoverDetails, searchActive = f
         </div>
       </div>
 
-      <div className='mt-8'>
+      <div key={`${activeCategoryId}-${searchActive ? 'q' : 'all'}`} className='home-list-reveal mt-8'>
         {courses.length === 0 ? (
           <Typography.Paragraph className='!mb-0 text-slate-600'>{searchActive ? 'No available courses match your search.' : 'No courses to show yet.'}</Typography.Paragraph>
         ) : visibleCourses.length === 0 ? (

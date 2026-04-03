@@ -4,6 +4,7 @@ import {useEffect, useMemo, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {CourseFlipCard, CourseSliderControls, useCourseCarousel} from '../../../components/shared/course';
 import {newArrivalCategories, newArrivalCategoryLabels, newArrivalsSectionMeta} from '../../../const/homePageData';
+import {SectionHeading} from './SectionHeading';
 import type {HoverDetail} from '../../../types/types';
 import type {Course} from '../../../types/course';
 
@@ -29,15 +30,16 @@ export function NewArrivalsSection({courses, hoverDetails, searchActive = false}
   const activeCategoryLabel = activeCategoryId === 'all' ? 'courses' : `${newArrivalCategoryLabels[activeCategoryId] ?? 'category'} courses`;
 
   return (
-    <section className='relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm shadow-slate-900/5 md:p-8 lg:p-10'>
-      <header className='mb-6 md:mb-8'>
-        <Typography.Title level={2} className='!mb-3 !text-[1.35rem] !font-bold !leading-[1.15] !tracking-tight text-brand-navy md:!text-[1.75rem]'>
-          {newArrivalsSectionMeta.title}
-        </Typography.Title>
-        <Typography.Paragraph className='!mb-0 !max-w-3xl !text-[0.95rem] !font-normal !leading-relaxed !text-slate-600 md:!text-base'>
-          {newArrivalsSectionMeta.subtitle}
-        </Typography.Paragraph>
-      </header>
+    <section
+      id='home-new'
+      className='relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm shadow-slate-900/5 md:p-8 lg:p-10'>
+      <div className='mb-6 md:mb-8'>
+        <SectionHeading
+          kicker={newArrivalsSectionMeta.kicker}
+          title={newArrivalsSectionMeta.title}
+          description={newArrivalsSectionMeta.subtitle}
+        />
+      </div>
 
       <div className='border-b border-slate-200/90'>
         <div className='-mb-px flex gap-4 overflow-x-auto pb-0 md:gap-8 [scrollbar-width:thin]' role='tablist' aria-label='Course categories'>
@@ -50,7 +52,7 @@ export function NewArrivalsSection({courses, hoverDetails, searchActive = false}
                 role='tab'
                 aria-selected={selected}
                 onClick={() => setActiveCategoryId(id)}
-                className={`shrink-0 border-b-2 pb-3 text-sm font-semibold tracking-tight transition-colors md:text-[0.95rem] ${
+                className={`shrink-0 border-b-2 pb-3 text-sm font-semibold tracking-tight transition-colors duration-200 md:text-[0.95rem] ${
                   selected ? 'border-brand-navy text-brand-navy' : 'border-transparent text-slate-500 hover:text-brand-navy/80'
                 }`}>
                 {label}
@@ -60,7 +62,7 @@ export function NewArrivalsSection({courses, hoverDetails, searchActive = false}
         </div>
       </div>
 
-      <div className='mt-8'>
+      <div key={`${activeCategoryId}-${searchActive ? 'q' : 'all'}`} className='home-list-reveal mt-8'>
         {courses.length === 0 ? (
           <Typography.Paragraph className='!mb-0 text-slate-600'>{searchActive ? 'No new arrivals match your search.' : 'No courses to show yet.'}</Typography.Paragraph>
         ) : visibleCourses.length === 0 ? (
@@ -77,7 +79,7 @@ export function NewArrivalsSection({courses, hoverDetails, searchActive = false}
               </div>
             </div>
             <CourseSliderControls
-              theme='emerald'
+              theme='indigo'
               ariaLabelLeft='Scroll newly arrived courses left'
               ariaLabelRight='Scroll newly arrived courses right'
               onPrev={() => scroll('left')}

@@ -26,7 +26,7 @@ export function CourseSliderControls({theme, ariaLabelLeft, ariaLabelRight, onPr
     <div className='mt-4 flex items-center justify-center gap-3'>
       <Button size='large' className={prevBtnClass[theme]} shape='circle' icon={<LeftOutlined />} aria-label={ariaLabelLeft} onClick={onPrev} />
       <div className={laneClass[theme]}>
-        <Typography.Text className='text-xs font-semibold text-white!'>Swipe the lane</Typography.Text>
+        <Typography.Text className='text-xs! font-semibold text-white!'>Swipe the lane</Typography.Text>
         <span className='h-2 w-2 rounded-full bg-white/70' />
         <span className='h-2 w-2 rounded-full bg-white' />
         <span className='h-2 w-2 rounded-full bg-white/70' />

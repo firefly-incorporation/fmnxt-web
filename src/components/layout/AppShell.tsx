@@ -4,18 +4,28 @@ import { CartProvider } from '../../context/CartContext'
 import { HomeCourseSearchProvider } from '../../context/HomeCourseSearchContext'
 import { BottomNav } from './BottomNav'
 import { Footer } from './Footer'
+import { HomeViewportRails } from './HomeViewportRails'
 import { Header } from './Header'
 
 export function AppShell({ children }: PropsWithChildren) {
-  const isLoginRoute = useLocation().pathname === '/login'
+  const { pathname } = useLocation()
+  const isLoginRoute = pathname === '/login'
+  const isHomeRoute = pathname === '/'
 
   return (
     <CartProvider>
       <HomeCourseSearchProvider>
-        <div className="min-h-screen bg-linear-to-b from-slate-100 via-brand-gold-light/35 to-slate-100 text-slate-900">
+        <div
+          className={`relative min-h-screen overflow-x-clip text-slate-900 ${
+            isHomeRoute
+              ? 'home-shell-gradient'
+              : 'bg-linear-to-b from-slate-100 via-brand-gold-light/35 to-slate-100'
+          }`}
+        >
           <Header />
+          {isHomeRoute ? <HomeViewportRails /> : null}
           <main
-            className={`mx-auto w-full max-w-[1360px] px-4 py-6 pb-24 sm:px-6 md:pb-6 lg:px-10 ${
+            className={`relative z-10 mx-auto w-full max-w-[1360px] px-4 py-6 pb-24 sm:px-6 md:pb-6 lg:px-10 ${
               isLoginRoute ? 'max-md:p-0' : ''
             }`}
           >
