@@ -1,8 +1,8 @@
-# FMNXT Web
+# FMNXT UI
 
-Professional learning platform UI for FM and CRE — React, TypeScript, Vite, Ant Design, Tailwind CSS.
+**FMNXT** is a professional learning platform for **facility management (FM)** and **corporate real estate (CRE)**. This repository is the **public web client**: course discovery, home experience, cart, learner dashboard, library, and authentication screens — built with **React**, **TypeScript**, **Vite**, **Ant Design**, and **Tailwind CSS**.
 
-**Suggested repository name:** `fmnxt-web`
+**Suggested GitHub name:** `fmnxt-ui` (fits alongside a future API or services repo, e.g. `fmnxt-api`).
 
 ## Scripts
 
@@ -13,19 +13,16 @@ npm run build    # production build → dist/
 npm run preview  # preview production build
 ```
 
-## Publish to GitHub
+## GitHub
 
-1. Create a new repository on GitHub named **`fmnxt-web`** (empty, no README).
-2. From this folder:
+Create an empty repository named **`fmnxt-ui`**, then:
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/fmnxt-web.git
+git remote add origin https://github.com/YOUR_USERNAME/fmnxt-ui.git
 git branch -M main
 git push -u origin main
 ```
 
-Replace `YOUR_USERNAME` with your GitHub username or organization.
+## Deploy (client preview)
 
-## Client preview (deploy)
-
-After the repo exists, connect it to **Vercel**, **Netlify**, or **Cloudflare Pages** (build: `npm run build`, output: `dist`) and share the generated `https://…` URL.
+Use **Vercel**, **Netlify**, or **Cloudflare Pages**: build `npm run build`, output directory `dist`.

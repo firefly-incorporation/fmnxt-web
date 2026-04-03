@@ -1,5 +1,6 @@
 {
-  "name": "fmnxt-web",
+  "name": "fmnxt-ui",
+  "description": "FMNXT web client — courses, catalog, cart, dashboard, and library UI for facility management and corporate real estate learning.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
