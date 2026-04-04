@@ -23,7 +23,7 @@ export function Header() {
         <Link to="/" className="flex shrink-0 items-center transition-opacity hover:opacity-90" aria-label="FMNXT home">
           <img
             src={BRAND.logoFull}
-            alt="FMNXT — Learn, Transform, Lead."
+            alt="FMNXT. Learn, Transform, Lead."
             className="h-9 w-auto max-w-[min(100%,180px)] object-contain object-left sm:h-10 sm:max-w-[200px] lg:max-w-[220px]"
             width={220}
             height={48}

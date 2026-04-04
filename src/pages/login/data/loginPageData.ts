@@ -12,7 +12,7 @@ export const LOGIN_HERO_IMAGES = [
 ] as const
 
 export const LOGIN_HERO_HIGHLIGHTS = [
-  'Learn, Transform, Lead — built for FM and CRE professionals',
+  'Learn, Transform, Lead: built for FM and CRE professionals',
   'Practical programs shaped by industry practitioners',
   'One hub for courses, credentials, and member resources',
 ] as const

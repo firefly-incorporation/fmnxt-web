@@ -4,13 +4,15 @@ import {Button, Typography} from 'antd';
 type Theme = 'emerald' | 'indigo';
 
 const laneClass: Record<Theme, string> = {
-  emerald: 'inline-flex items-center gap-3 rounded-full bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500 px-4 py-2 text-white shadow-[0_8px_20px_rgba(16,185,129,0.35)]',
-  indigo: 'inline-flex items-center gap-3 rounded-full bg-linear-to-r from-brand-navy via-brand-gold to-brand-gold-dark px-4 py-2 text-white shadow-[0_8px_20px_rgba(0,30,61,0.28)]'
+  emerald:
+    'inline-flex items-center gap-2 rounded-full bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500 px-3 py-1.5 text-white shadow-sm',
+  indigo:
+    'inline-flex items-center gap-2 rounded-full bg-linear-to-r from-brand-navy via-brand-gold to-brand-gold-dark px-3 py-1.5 text-white shadow-sm'
 };
 
 const prevBtnClass: Record<Theme, string> = {
-  emerald: 'rounded-full border-emerald-300 bg-white text-emerald-700 shadow-sm',
-  indigo: 'rounded-full border-brand-gold/40 bg-white text-brand-navy shadow-sm'
+  emerald: 'rounded-full border-emerald-200 bg-white text-emerald-700',
+  indigo: 'rounded-full border-slate-200 bg-white text-brand-navy'
 };
 
 type Props = {
@@ -23,15 +25,30 @@ type Props = {
 
 export function CourseSliderControls({theme, ariaLabelLeft, ariaLabelRight, onPrev, onNext}: Props) {
   return (
-    <div className='mt-4 flex items-center justify-center gap-3'>
-      <Button size='large' className={prevBtnClass[theme]} shape='circle' icon={<LeftOutlined />} aria-label={ariaLabelLeft} onClick={onPrev} />
+    <div className="mt-4 flex items-center justify-center gap-2 sm:gap-3">
+      <Button
+        size="large"
+        className={prevBtnClass[theme]}
+        shape="circle"
+        icon={<LeftOutlined />}
+        aria-label={ariaLabelLeft}
+        onClick={onPrev}
+      />
       <div className={laneClass[theme]}>
-        <Typography.Text className='text-xs! font-semibold text-white!'>Swipe the lane</Typography.Text>
-        <span className='h-2 w-2 rounded-full bg-white/70' />
-        <span className='h-2 w-2 rounded-full bg-white' />
-        <span className='h-2 w-2 rounded-full bg-white/70' />
+        <Typography.Text className="text-xs! font-medium text-white!">Scroll</Typography.Text>
+        <span className="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden />
+        <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden />
+        <span className="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden />
       </div>
-      <Button size='large' type='primary' className='rounded-full shadow-md' shape='circle' icon={<RightOutlined />} aria-label={ariaLabelRight} onClick={onNext} />
+      <Button
+        size="large"
+        type="primary"
+        className="rounded-full"
+        shape="circle"
+        icon={<RightOutlined />}
+        aria-label={ariaLabelRight}
+        onClick={onNext}
+      />
     </div>
   );
 }

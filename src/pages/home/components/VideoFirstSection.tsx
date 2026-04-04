@@ -93,7 +93,7 @@ export function VideoFirstSection() {
             <SectionHeading
               kicker="Platform promise"
               title="Watch. Learn. Apply."
-              description="Every course is delivered as focused video modules—short lessons, clear outcomes, and practical takeaways for busy FM and CRE professionals."
+              description="Every course is delivered as focused video modules: short lessons, clear outcomes, and practical takeaways for busy FM and CRE professionals."
               showAccent={false}
               titleClassName="!mb-2 !mt-0 !text-3xl !font-bold !leading-tight !tracking-tight text-brand-navy md:!text-4xl lg:!text-[2.75rem]"
             />

@@ -5,7 +5,7 @@ import type {HoverDetail} from '../types/types';
 export const newArrivalsSectionMeta = {
   kicker: 'Courses & study paths',
   title: 'Skills to strengthen your FM and CRE career',
-  subtitle: 'From core FM operations through CRE portfolio strategy—choose a topic and explore our latest video modules.'
+  subtitle: 'From core FM operations through CRE portfolio strategy: choose a topic and explore our latest video modules.'
 } as const;
 
 const newArrivalCategoryEntries = [
@@ -25,7 +25,7 @@ export const newArrivalCategories = [{id: 'all', label: 'All'}, ...newArrivalCat
 export const availableCoursesSectionMeta = {
   kicker: 'Featured programs',
   title: 'Top courses',
-  subtitle: 'Hand-picked FM and CRE programs with practical lessons and member pricing—browse by focus area.'
+  subtitle: 'Hand-picked FM and CRE programs with practical lessons and member pricing. Browse by focus area.'
 } as const;
 
 export const availableCourseCategoryTabs = [
@@ -43,7 +43,7 @@ export const heroValueProps = [
     title: 'Role-aligned depth',
     subtitle: 'FM & CRE context in every module',
     detail:
-      'Lessons map to real facilities and corporate real estate work—not generic theory—so you can apply ideas in the next shift, walkthrough, or portfolio review.'
+      'Lessons map to real facilities and corporate real estate work, not generic theory, so you can apply ideas in the next shift, walkthrough, or portfolio review.'
   },
   {
     id: 'pace',
@@ -57,7 +57,7 @@ export const heroValueProps = [
     title: 'Outcomes you can cite',
     subtitle: 'Skills for reviews & stakeholders',
     detail:
-      'Build practical talking points for budget cycles, SLA reviews, and stakeholder updates—clear outcomes from short, focused video paths.'
+      'Build practical talking points for budget cycles, SLA reviews, and stakeholder updates, with clear outcomes from short, focused video paths.'
   }
 ] as const;
 
@@ -126,7 +126,7 @@ export const homeFaqItems = [
     key: '1',
     question: 'What topics does FMNXT cover?',
     answer:
-      'Facilities management operations, corporate real estate, workplace and space strategy, sustainability, vendor performance, safety basics, and related professional skills—delivered as short video modules.'
+      'Facilities management operations, corporate real estate, workplace and space strategy, sustainability, vendor performance, safety basics, and related professional skills, delivered as short video modules.'
   },
   {
     key: '2',

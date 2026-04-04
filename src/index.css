@@ -256,21 +256,116 @@ body {
   }
 }
 
+@keyframes home-reveal-slide-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 48px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes home-reveal-slide-left {
+  0% {
+    opacity: 0;
+    transform: translate3d(44px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes home-reveal-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes home-reveal-tilt {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0) rotate(-1.25deg) scale(0.97);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0) scale(1);
+    filter: blur(0);
+  }
+}
+
 .home-reveal-inner {
+  transition: none;
+  transform-origin: 50% 80%;
+}
+
+.home-reveal-inner--pop {
   opacity: 0;
   transform: translate3d(0, 36px, 0) scale(0.96);
   filter: blur(8px);
-  transform-origin: 50% 80%;
-  transition: none;
 }
 
-.home-reveal-inner.home-reveal-inner--in {
+.home-reveal-inner--slideUp {
+  opacity: 0;
+  transform: translate3d(0, 40px, 0);
+  filter: none;
+}
+
+.home-reveal-inner--slideLeft {
+  opacity: 0;
+  transform: translate3d(40px, 12px, 0);
+  filter: none;
+}
+
+.home-reveal-inner--fade {
+  opacity: 0;
+  transform: none;
+  filter: none;
+}
+
+.home-reveal-inner--tilt {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(0.98) rotate(-1deg);
+  filter: blur(5px);
+}
+
+.home-reveal-inner--pop.home-reveal-inner--in {
   animation: home-reveal-pop 1s cubic-bezier(0.22, 1, 0.32, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
 }
 
+.home-reveal-inner--slideUp.home-reveal-inner--in {
+  animation: home-reveal-slide-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.home-reveal-inner--slideLeft.home-reveal-inner--in {
+  animation: home-reveal-slide-left 0.88s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.home-reveal-inner--fade.home-reveal-inner--in {
+  animation: home-reveal-fade 0.95s ease-out forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.home-reveal-inner--tilt.home-reveal-inner--in {
+  animation: home-reveal-tilt 0.92s cubic-bezier(0.22, 1, 0.34, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .home-reveal-inner {
+  .home-reveal-inner--pop,
+  .home-reveal-inner--slideUp,
+  .home-reveal-inner--slideLeft,
+  .home-reveal-inner--fade,
+  .home-reveal-inner--tilt {
     opacity: 0;
     transform: none;
     filter: none;
@@ -278,7 +373,11 @@ body {
     transition-delay: var(--reveal-delay, 0ms);
   }
 
-  .home-reveal-inner.home-reveal-inner--in {
+  .home-reveal-inner--pop.home-reveal-inner--in,
+  .home-reveal-inner--slideUp.home-reveal-inner--in,
+  .home-reveal-inner--slideLeft.home-reveal-inner--in,
+  .home-reveal-inner--fade.home-reveal-inner--in,
+  .home-reveal-inner--tilt.home-reveal-inner--in {
     opacity: 1;
     animation: none;
   }
@@ -299,6 +398,35 @@ body {
   will-change: transform;
 }
 
+/* Gentle horizontal pan (paired with Ken Burns on other tiles) */
+@keyframes home-pan-soft {
+  0% {
+    transform: scale(1.06) translate3d(3%, 0, 0);
+  }
+  100% {
+    transform: scale(1.06) translate3d(-3%, -1.2%, 0);
+  }
+}
+
+.home-img-pan {
+  animation: home-pan-soft 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes home-drift-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(8px, -6px, 0);
+  }
+}
+
+.home-drift-x {
+  animation: home-drift-card 7.5s ease-in-out infinite;
+}
+
 .home-img-ken-hover {
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -309,7 +437,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-img-ken {
+  .home-img-ken,
+  .home-img-pan,
+  .home-drift-x {
     animation: none;
   }
 
@@ -421,34 +551,5 @@ body {
   .home-faq-polaroid-a,
   .home-faq-polaroid-b {
     animation: none;
-  }
-}
-
-/* Viewport side rails — blueprint grid + soft scan */
-.home-rail-grid-bg {
-  background-image:
-    linear-gradient(rgba(10, 37, 64, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 37, 64, 0.06) 1px, transparent 1px);
-  background-size: 14px 14px;
-}
-
-@keyframes home-rail-scanline {
-  0%,
-  100% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 0.55;
-  }
-}
-
-.home-rail-scan {
-  animation: home-rail-scanline 5s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-rail-scan {
-    animation: none;
-    opacity: 0.35;
   }
 }

@@ -48,7 +48,7 @@ export function LoginDesktopHeroPanel({ heroCategoriesLine, highlightLines }: Lo
               Continue your professional development
             </h2>
             <p className="mt-2.5 max-w-lg text-sm leading-relaxed text-white/80 sm:text-[15px]">
-              Sign in to access courses, saved progress, and member resources—built for facility and corporate real estate
+              Sign in to access courses, saved progress, and member resources, built for facility and corporate real estate
               leaders.
             </p>
             <ul className="mt-5 space-y-3 border-t border-white/10 pt-5">

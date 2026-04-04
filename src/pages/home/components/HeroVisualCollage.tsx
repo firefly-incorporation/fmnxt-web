@@ -1,4 +1,5 @@
 import { homeHeroCollageImages } from '../../../const/homeVisuals'
+import { HomeDecorativeImage } from './HomeDecorativeImage'
 
 export function HeroVisualCollage() {
   const [a, b, c] = homeHeroCollageImages
@@ -15,32 +16,26 @@ export function HeroVisualCollage() {
         className="absolute left-0 top-2 w-[58%] overflow-hidden rounded-2xl border-[3px] border-white shadow-xl shadow-brand-navy/20 ring-1 ring-brand-sun/40 home-float-a"
         style={{ zIndex: 2 }}
       >
-        <img
+        <HomeDecorativeImage
           src={a.src}
+          fallbackSrc={a.fallbackSrc}
           alt=""
-          className="home-img-ken aspect-[4/3] h-full w-full object-cover"
-          width={520}
-          height={390}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
+          className="aspect-[4/3] min-h-0"
+          imgClassName="home-img-ken aspect-[4/3] h-full w-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-tr from-brand-sun/40 via-transparent to-brand-coral/30 mix-blend-soft-light" />
       </div>
 
       <div
-        className="absolute right-0 top-0 w-[52%] overflow-hidden rounded-2xl border-[3px] border-white shadow-xl shadow-brand-violet-bright/25 ring-1 ring-brand-mint/50 home-float-b"
+        className="absolute right-0 top-0 w-[52%] overflow-hidden rounded-2xl border-[3px] border-white shadow-xl shadow-brand-violet-bright/25 ring-1 ring-brand-mint/50 home-drift-x"
         style={{ zIndex: 3 }}
       >
-        <img
+        <HomeDecorativeImage
           src={b.src}
+          fallbackSrc={b.fallbackSrc}
           alt=""
-          className="aspect-[4/3] w-full object-cover"
-          width={520}
-          height={390}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
+          className="aspect-[4/3] min-h-0"
+          imgClassName="home-img-pan aspect-[4/3] w-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-bl from-brand-mint/35 via-transparent to-brand-violet-bright/25 mix-blend-soft-light" />
       </div>
@@ -49,16 +44,12 @@ export function HeroVisualCollage() {
         className="absolute bottom-0 left-[12%] w-[72%] overflow-hidden rounded-2xl border-[3px] border-white shadow-xl shadow-brand-gold/30 ring-1 ring-brand-gold/45 home-float-c"
         style={{ zIndex: 4 }}
       >
-        <img
+        <HomeDecorativeImage
           src={c.src}
+          fallbackSrc={c.fallbackSrc}
           alt=""
-          className="home-img-ken aspect-[16/9] h-full w-full object-cover"
-          width={520}
-          height={293}
-          loading="lazy"
-          decoding="async"
-          referrerPolicy="no-referrer"
-          style={{ animationDelay: '-6s' }}
+          className="aspect-[16/9] min-h-0"
+          imgClassName="home-img-ken aspect-[16/9] h-full w-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-brand-gold/30 via-transparent to-brand-sun/25 mix-blend-soft-light" />
       </div>

@@ -22,7 +22,7 @@ function StatIcon({ name }: { name: keyof typeof statIcons }) {
       className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-white/20 to-white/5 text-lg text-white shadow-inner shadow-white/10 ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105 group-hover:from-brand-sun/30 group-hover:to-brand-gold/20"
       aria-hidden
     >
-      <Icon />
+      <Icon className="text-white" />
     </span>
   )
 }
@@ -49,13 +49,13 @@ function StatCount({
         <StatIcon name={icon} />
         <Typography.Title
           level={2}
-          className="!mb-1 !mt-4 !bg-linear-to-br !from-white !via-cyan-100 !to-brand-sun !bg-clip-text !text-[1.85rem] !font-extrabold !leading-none !tracking-tight !text-transparent tabular-nums md:!text-[2.35rem]"
+          className="!mb-1 !mt-4 !text-[1.85rem] !font-extrabold !leading-none !tracking-tight !text-white tabular-nums drop-shadow-sm md:!text-[2.35rem]"
           aria-label={ariaLabel}
         >
           {n}
           {suffix}
         </Typography.Title>
-        <Typography.Text className="relative z-[1] text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100/85 md:text-xs">
+        <Typography.Text className="relative z-[1] text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 md:text-xs">
           {label}
         </Typography.Text>
       </div>
@@ -82,14 +82,14 @@ function StatStatic({
         <StatIcon name={icon} />
         <Typography.Title
           level={2}
-          className={`!mb-1 !mt-4 !bg-linear-to-r !from-brand-sun !via-white !to-brand-mint !bg-clip-text !text-[1.85rem] !font-extrabold !leading-none !tracking-tight !text-transparent md:!text-[2.35rem] ${
+          className={`!mb-1 !mt-4 !text-[1.85rem] !font-extrabold !leading-none !tracking-tight !text-white md:!text-[2.35rem] ${
             inView ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
           } transition-all duration-700 ease-out motion-reduce:scale-100 motion-reduce:opacity-100`}
           aria-label={ariaLabel}
         >
           {value}
         </Typography.Title>
-        <Typography.Text className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-100/85 md:text-xs">
+        <Typography.Text className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90 md:text-xs">
           {label}
         </Typography.Text>
       </div>
@@ -125,7 +125,7 @@ export function StatsStrip({ stats }: Props) {
           level={3}
           className="!mb-0 !mt-2 !text-xl !font-bold !leading-snug !text-white md:!text-2xl"
         >
-          A platform built for scale—and for your next career move
+          A platform built for scale and for your next career move
         </Typography.Title>
       </div>
 

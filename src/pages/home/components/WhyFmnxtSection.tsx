@@ -1,5 +1,6 @@
 import { Card, Col, Row, Tag, Typography } from 'antd'
 import { homeWhyImage } from '../../../const/homeVisuals'
+import { HomeDecorativeImage } from './HomeDecorativeImage'
 
 export function WhyFmnxtSection() {
   return (
@@ -26,14 +27,12 @@ export function WhyFmnxtSection() {
             className="mx-auto max-w-xs border-0 shadow-2xl shadow-brand-navy/30 home-float-b"
           >
             <div className="group overflow-hidden rounded-xl">
-              <img
+              <HomeDecorativeImage
                 src={homeWhyImage.src}
+                fallbackSrc={homeWhyImage.fallbackSrc}
                 alt={homeWhyImage.alt}
-                className="home-img-ken home-img-ken-hover aspect-[4/3] w-full object-cover"
-                width={640}
-                height={480}
-                loading="lazy"
-                decoding="async"
+                className="aspect-[4/3] min-h-[180px]"
+                imgClassName="home-img-pan home-img-ken-hover"
               />
             </div>
             <div className="px-1 pb-1 pt-3">

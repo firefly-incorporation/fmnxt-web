@@ -53,7 +53,7 @@ export function HeroSection() {
             FMNXT Learning Platform
           </Tag>
           <Typography.Title className="mb-3 mt-3 max-w-none bg-linear-to-r from-brand-navy via-brand-gold to-brand-sun bg-clip-text text-[32px]! leading-[0.98] text-transparent md:mt-4 md:text-[clamp(2.5rem,4.2vw,3.75rem)] lg:max-w-[34rem] xl:max-w-none">
-            Power up your FM & CRE learning—practical video paths for busy professionals
+            Power up your FM & CRE learning with practical video paths for busy professionals
           </Typography.Title>
           <Typography.Paragraph className="max-w-2xl text-sm text-slate-600 md:text-base lg:max-w-none">
             FMNXT offers short, structured video courses in Facilities Management and Corporate Real Estate. Learn from
@@ -133,12 +133,12 @@ export function HeroSection() {
               >
                 <Space size={6}>
                   <FiCalendar className="text-brand-gold-dark" aria-hidden />
-                  <Typography.Text className="text-xs">Course access</Typography.Text>
+                  <Typography.Text className="text-xs text-brand-navy/80">Course access</Typography.Text>
                 </Space>
-                <Typography.Text strong className="mt-2 block">
+                <Typography.Text strong className="mt-2 block !text-brand-navy">
                   Self-paced video learning
                 </Typography.Text>
-                <Typography.Text className="text-xs">Watch anytime after enrollment</Typography.Text>
+                <Typography.Text className="text-xs text-slate-600">Watch anytime after enrollment</Typography.Text>
               </Card>
             </Col>
           </Row>

@@ -8,7 +8,7 @@ export function LoginFormBrandIntro() {
         Learn, Transform, Lead
       </h1>
       <p className="text-[15px] leading-relaxed text-white/85 md:text-slate-600">
-        Built for FM and CRE professionals—practical programs shaped by practitioners, with courses, credentials, and member
+        Built for FM and CRE professionals: practical programs shaped by practitioners, with courses, credentials, and member
         resources in one hub.
       </p>
     </div>
