@@ -6,14 +6,14 @@ export function WhyFmnxtSection() {
   return (
     <section
       id="home-why"
-      className="relative overflow-hidden rounded-[28px] bg-linear-to-br from-brand-navy via-[#0c4a6e] to-brand-violet-bright/40 p-6 shadow-lg shadow-brand-navy/25 md:rounded-[34px] md:p-8"
+      className="relative overflow-hidden rounded-2xl bg-linear-to-br from-brand-navy via-brand-navy to-brand-gold-dark p-6 shadow-lg shadow-brand-navy/20 md:rounded-3xl md:p-8"
     >
       <div className="pointer-events-none absolute -left-6 top-10 h-24 w-24 rounded-full border border-white/20 home-float-a" />
-      <div className="pointer-events-none absolute right-16 top-8 h-3 w-3 rotate-12 rounded-sm bg-brand-sun/70 home-float-b" />
-      <div className="pointer-events-none absolute right-10 bottom-12 h-2.5 w-2.5 rotate-12 rounded-sm bg-brand-mint/80 home-float-c" />
+      <div className="pointer-events-none absolute right-16 top-8 h-3 w-3 rotate-12 rounded-sm bg-white/50 home-float-b" />
+      <div className="pointer-events-none absolute right-10 bottom-12 h-2.5 w-2.5 rotate-12 rounded-sm bg-brand-gold/60 home-float-c" />
       <Row gutter={[24, 24]} align="middle">
         <Col xs={24} md={16}>
-          <Tag className="border-brand-sun/50! bg-brand-sun/15! text-brand-sun!">Why FMNXT</Tag>
+          <Tag className="border-white/35! bg-white/10! text-white!">Why FMNXT</Tag>
           <Typography.Title level={3} className="mt-3 mb-2 !text-white">
             Purpose-built learning for Facilities Management and Corporate Real Estate careers.
           </Typography.Title>

@@ -19,7 +19,7 @@ function StatIcon({ name }: { name: keyof typeof statIcons }) {
   const Icon = statIcons[name]
   return (
     <span
-      className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-white/20 to-white/5 text-lg text-white shadow-inner shadow-white/10 ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105 group-hover:from-brand-sun/30 group-hover:to-brand-gold/20"
+      className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-br from-white/20 to-white/5 text-lg text-white shadow-inner shadow-white/10 ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105 group-hover:from-brand-gold/25 group-hover:to-white/15"
       aria-hidden
     >
       <Icon className="text-white" />
@@ -77,7 +77,7 @@ function StatStatic({
   icon: keyof typeof statIcons
 }) {
   return (
-    <div className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-md transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:bg-linear-to-br before:from-brand-sun/0 before:to-brand-coral/0 before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:from-brand-sun/15 group-hover:before:to-brand-coral/10 group-hover:before:opacity-100 md:p-5">
+    <div className="group relative flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-md transition-all duration-300 before:pointer-events-none before:absolute before:inset-0 before:rounded-2xl before:bg-linear-to-br before:from-brand-gold/0 before:to-slate-400/0 before:opacity-0 before:transition-opacity before:duration-300 group-hover:before:from-brand-gold/12 group-hover:before:to-white/5 group-hover:before:opacity-100 md:p-5">
       <div className="relative z-[1] flex flex-1 flex-col items-center text-center md:items-start md:text-left">
         <StatIcon name={icon} />
         <Typography.Title
@@ -104,15 +104,15 @@ export function StatsStrip({ stats }: Props) {
     <section
       ref={ref}
       id="home-stats"
-      className="relative overflow-hidden rounded-[28px] border border-white/10 bg-linear-to-br from-brand-navy via-[#0a3d5c] to-[#063652] px-4 pb-8 pt-12 shadow-2xl shadow-brand-navy/40 md:rounded-[36px] md:px-8 md:pb-10 md:pt-14 lg:px-10"
+      className="relative overflow-hidden rounded-[28px] border border-white/10 bg-linear-to-br from-brand-navy via-brand-gold-dark to-[#172554] px-4 pb-8 pt-12 shadow-2xl shadow-brand-navy/40 md:rounded-[36px] md:px-8 md:pb-10 md:pt-14 lg:px-10"
       aria-label="Platform highlights"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
-          backgroundImage: `radial-gradient(ellipse 80% 50% at 20% 0%, rgba(6, 182, 212, 0.18), transparent),
-            radial-gradient(ellipse 60% 40% at 90% 100%, rgba(255, 176, 32, 0.12), transparent),
-            radial-gradient(ellipse 50% 30% at 70% 20%, rgba(139, 92, 246, 0.08), transparent)`
+          backgroundImage: `radial-gradient(ellipse 80% 50% at 20% 0%, rgba(37, 99, 235, 0.2), transparent),
+            radial-gradient(ellipse 60% 40% at 90% 100%, rgba(59, 130, 246, 0.12), transparent),
+            radial-gradient(ellipse 50% 30% at 70% 20%, rgba(148, 163, 184, 0.14), transparent)`
         }}
         aria-hidden
       />

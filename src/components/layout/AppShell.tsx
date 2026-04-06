@@ -19,7 +19,7 @@ export function AppShell({ children }: PropsWithChildren) {
           className={`relative min-h-screen overflow-x-clip text-slate-900 ${
             isHomeRoute
               ? 'home-shell-gradient'
-              : 'bg-linear-to-b from-slate-100 via-brand-gold-light/35 to-slate-100'
+              : 'bg-white'
           }`}
         >
           <Header />

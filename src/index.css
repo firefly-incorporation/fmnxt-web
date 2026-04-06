@@ -1,27 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-navy: #0a2540;
-  --color-brand-gold: #06b6d4;
-  --color-brand-gold-light: #cffafe;
-  --color-brand-gold-dark: #0e7490;
-  /* Bright accents (home marketing) */
-  --color-brand-coral: #ff5a5f;
-  --color-brand-sun: #ffb020;
-  --color-brand-mint: #34d399;
-  --color-brand-violet-bright: #8b5cf6;
+  /* Primary: royal blue; interactive: blue-600; surfaces: cool neutrals */
+  --color-brand-navy: #1e3a8a;
+  --color-brand-gold: #2563eb;
+  --color-brand-gold-light: #eff6ff;
+  --color-brand-gold-dark: #1e40af;
+  /* Accents: use sparingly (amber CTA, soft purple, light blue highlights) */
+  --color-brand-coral: #f59e0b;
+  --color-brand-sun: #f59e0b;
+  --color-brand-mint: #93c5fd;
+  --color-brand-violet-bright: #7c3aed;
 }
 
 :root {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --brand-navy: #0a2540;
-  --brand-gold: #06b6d4;
-  --brand-gold-light: #cffafe;
-  --brand-gold-dark: #0e7490;
-  --brand-coral: #ff5a5f;
-  --brand-sun: #ffb020;
-  --brand-mint: #34d399;
-  --brand-violet-bright: #8b5cf6;
+  --brand-navy: #1e3a8a;
+  --brand-gold: #2563eb;
+  --brand-gold-light: #eff6ff;
+  --brand-gold-dark: #1e40af;
+  --brand-coral: #f59e0b;
+  --brand-sun: #f59e0b;
+  --brand-mint: #93c5fd;
+  --brand-violet-bright: #7c3aed;
 }
 
 html {
@@ -30,7 +31,8 @@ html {
 
 body {
   margin: 0;
-  background-color: #f0f9ff;
+  background-color: #ffffff;
+  color: #111827;
   /* Prevent sideways scroll from decorative -left/-right blobs and polaroids */
   overflow-x: clip;
 }
@@ -212,18 +214,9 @@ body {
   animation: home-bob-slow 4.8s ease-in-out infinite;
 }
 
+/* Home shell: crisp white (no tinted gradient) */
 .home-shell-gradient {
-  background: linear-gradient(
-    132deg,
-    #e0f2fe 0%,
-    #cffafe 18%,
-    #fef9c3 38%,
-    #fce7f3 58%,
-    #d9f99d 78%,
-    #e0f2fe 100%
-  );
-  background-size: 320% 320%;
-  animation: home-shell-gradient 26s ease infinite;
+  background: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -462,11 +455,11 @@ body {
 .home-accent-shimmer {
   background: linear-gradient(
     90deg,
-    var(--color-brand-gold, #06b6d4) 0%,
-    var(--color-brand-sun, #ffb020) 25%,
-    var(--color-brand-mint, #34d399) 50%,
-    var(--color-brand-gold, #06b6d4) 75%,
-    var(--color-brand-gold-dark, #0e7490) 100%
+    var(--color-brand-navy, #1e3a8a) 0%,
+    var(--color-brand-gold, #2563eb) 30%,
+    #3b82f6 50%,
+    var(--color-brand-gold-dark, #1e40af) 72%,
+    var(--color-brand-navy, #1e3a8a) 100%
   );
   background-size: 200% 100%;
   animation: home-accent-shimmer 3.2s ease-in-out infinite alternate;
@@ -475,7 +468,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .home-accent-shimmer {
     animation: none;
-    background: linear-gradient(90deg, #06b6d4, #0e7490);
+    background: linear-gradient(90deg, #1e3a8a, #2563eb);
   }
 }
 

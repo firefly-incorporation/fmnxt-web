@@ -3,7 +3,7 @@ import type {HoverDetail} from '../types/types';
 
 /** Edit this to change the New Arrivals section headline (Udemy-style block). */
 export const newArrivalsSectionMeta = {
-  kicker: 'Courses & study paths',
+  kicker: 'Courses & study',
   title: 'Skills to strengthen your FM and CRE career',
   subtitle: 'From core FM operations through CRE portfolio strategy: choose a topic and explore our latest video modules.'
 } as const;

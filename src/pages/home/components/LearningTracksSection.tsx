@@ -21,7 +21,7 @@ export function LearningTracksSection({ tracks }: Props) {
     <section
       ref={sectionRef}
       id="home-tracks"
-      className="rounded-[28px] border border-slate-200/90 bg-linear-to-br from-slate-50 via-brand-gold-light/30 to-brand-sun/10 p-6 shadow-md shadow-slate-900/10 ring-1 ring-brand-mint/10 md:rounded-[34px] md:p-8"
+      className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:rounded-3xl md:p-8"
     >
       <SectionHeading
         align="center"
@@ -41,8 +41,8 @@ export function LearningTracksSection({ tracks }: Props) {
               <Card
                 className={`group h-full overflow-hidden rounded-2xl border-slate-200/90 bg-white/95 transition-all duration-500 ${
                   open
-                    ? '-translate-y-1 border-brand-gold/50 shadow-xl shadow-brand-navy/12 ring-1 ring-brand-sun/30'
-                    : 'hover:-translate-y-1 hover:border-brand-gold/40 hover:shadow-xl hover:shadow-brand-navy/10'
+                    ? '-translate-y-1 border-brand-navy/20 shadow-lg shadow-slate-200/80 ring-1 ring-brand-navy/10'
+                    : 'hover:-translate-y-1 hover:border-slate-300 hover:shadow-md hover:shadow-slate-200/60'
                 }`}
                 styles={{ body: { paddingTop: 16 } }}
                 cover={

@@ -52,7 +52,7 @@ export function BuiltForLearnersSection() {
 
       <div
         ref={bannerRef}
-        className={`group relative mt-8 overflow-hidden rounded-2xl border border-slate-200/80 shadow-lg shadow-brand-navy/15 ring-1 ring-brand-sun/30 home-media-enter ${
+        className={`group relative mt-8 overflow-hidden rounded-2xl border border-slate-200/80 shadow-lg shadow-slate-200/80 ring-1 ring-slate-100 home-media-enter ${
           bannerInView ? 'home-media-enter--visible' : ''
         }`}
       >
@@ -65,7 +65,7 @@ export function BuiltForLearnersSection() {
         />
         <div className="pointer-events-none absolute inset-0 z-[1] bg-linear-to-r from-brand-navy/85 via-brand-navy/45 to-brand-navy/10" aria-hidden />
         <div className="absolute inset-0 z-[2] flex flex-col justify-end p-5 md:p-8">
-          <Typography.Text className="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-sun drop-shadow-sm">
+          <Typography.Text className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/90 drop-shadow-sm">
             Learn anywhere
           </Typography.Text>
           <Typography.Title level={4} className="!mb-0 !mt-1 max-w-xl !text-white drop-shadow-md md:!text-2xl">
